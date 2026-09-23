@@ -1,0 +1,14 @@
+services:
+  ytchat:
+    image: python:3.13-alpine
+    container_name: ytchat
+    command: ["python", "-u", "/app/ytchat.py"]
+    environment:
+      - YTCHAT_PORT=8095
+      # - YTCHAT_CACHE_TTL=60
+      # - YTCHAT_RETRY=60
+    ports:
+      - "8095:8095"
+    volumes:
+      - ./ytchat.py:/app/ytchat.py:ro
+    restart: unless-stopped

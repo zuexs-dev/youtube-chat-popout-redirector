@@ -1,0 +1,16 @@
+# Run ytchat without Docker. Copy ytchat.py to /opt/ytchat/, then:
+#   cp ytchat.service /etc/systemd/system/ && systemctl enable --now ytchat
+[Unit]
+Description=ytchat - permanent URLs for YouTube live chat
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u /opt/ytchat/ytchat.py
+Environment=YTCHAT_HOST=127.0.0.1
+Environment=YTCHAT_PORT=8095
+DynamicUser=yes
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
