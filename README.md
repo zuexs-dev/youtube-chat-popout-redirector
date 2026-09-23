@@ -28,7 +28,7 @@ This is useful anywhere you want a chat pane that "just works" every stream: [Fe
 ### Docker Compose
 
 ```
-git clone https://github.com/<you>/ytchat.git && cd ytchat && docker compose up -d
+git clone https://github.com/zuexs-dev/youtube-chat-popout-redirector.git && cd youtube-chat-popout-redirector && docker compose up -d
 ```
 
 ### Plain Python
